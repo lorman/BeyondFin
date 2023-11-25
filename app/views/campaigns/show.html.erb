@@ -1,0 +1,11 @@
+<% if flash[:alert] %>
+  <div class="alert alert-danger">
+    <p><%= flash[:alert] %></p>
+  </div>
+<% end %>
+
+<% if @campaign %>
+  <h1>Campaign <% @campaign.name %></h1>
+  <h2>Created by: <% @campaign.user.name %>, <% @campaign.user.email %></h2>
+  <h3>Created at: <% @campaign.created_at %></h3>
+<% end %>
