@@ -1,0 +1,6 @@
+Campaigns:
+<ul>
+  <% @campaigns.each do |campaign| %>
+    <li><%= link_to campaign.name, campaign %></li>
+  <% end %>
+</ul>

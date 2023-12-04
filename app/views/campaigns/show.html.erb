@@ -5,7 +5,16 @@
 <% end %>
 
 <% if @campaign %>
-  <h1>Campaign <% @campaign.name %></h1>
-  <h2>Created by: <% @campaign.user.name %>, <% @campaign.user.email %></h2>
-  <h3>Created at: <% @campaign.created_at %></h3>
+  <h1>Campaign <%= @campaign.name %></h1>
+  <h2>Created by: <%= @campaign.user.name %>, <%= @campaign.user.email %></h2>
+  <h2>Created at: <%= @campaign.created_at %></h2>
+
+  <% @campaign.azzets.each do |azzet| %>
+    <ul>
+      <h3>Asset: <%= link_to azzet.name, azzet %></h3>
+      <% azzet.criteria.parents.each do |criteria| %>
+        <%= render partial: criteria  %>
+      <% end %>
+    </ul>
+  <% end %>
 <% end %>

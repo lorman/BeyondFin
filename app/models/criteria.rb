@@ -9,19 +9,23 @@
 #  type       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  assets_id  :integer
+#  azzet_id   :integer
 #  parent_id  :integer
 #
 # Indexes
 #
-#  index_criteria_on_assets_id  (assets_id)
+#  index_criteria_on_azzet_id  (azzet_id)
 #
 # Foreign Keys
 #
-#  assets_id  (assets_id => assets.id)
+#  azzet_id  (azzet_id => azzets.id)
 #
 class Criteria < ApplicationRecord
-  belongs_to :asset
-  has_many :criteria, class_name: 'Criteria', foreign_key: :parent_id, dependent: :destroy
+  belongs_to :azzet
+  has_many :children, class_name: 'Criteria', foreign_key: :parent_id, dependent: :destroy
   belongs_to :parent, class_name: 'Criteria', foreign_key: :parent_id, optional: true
+  
+  validates_uniqueness_of :order, scope: %i[azzet_id parent_id]
+  scope :parents, -> { where(parent_id: nil) }
+
 end

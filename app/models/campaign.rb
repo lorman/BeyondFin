@@ -10,13 +10,13 @@
 #
 # Indexes
 #
-#  index_camapigns_on_user_id  (user_id)
+#  index_campaigns_on_user_id  (user_id)
 #
 # Foreign Keys
 #
 #  user_id  (user_id => users.id)
 #
 class Campaign < ApplicationRecord
-  has_many :users
-  has_many :assets
+  belongs_to :user
+  has_many :azzets
 end

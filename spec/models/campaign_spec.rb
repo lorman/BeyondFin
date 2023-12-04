@@ -10,7 +10,7 @@
 #
 # Indexes
 #
-#  index_camapigns_on_user_id  (user_id)
+#  index_campaigns_on_user_id  (user_id)
 #
 # Foreign Keys
 #

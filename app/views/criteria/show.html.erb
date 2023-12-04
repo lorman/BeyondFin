@@ -1,0 +1,16 @@
+<% if flash[:alert] %>
+  <div class="alert alert-danger">
+    <p><%= flash[:alert] %></p>
+  </div>
+<% end %>
+
+
+<ul>
+  <% if @criteria %>
+    <% if @criteria.azzet %>
+      <li><%= link_to @criteria.azzet.name, @criteria.azzet %></li>
+      <%= asset_path(@criteria.azzet) %>
+    <% end %>
+
+  <% end %>
+</ul>

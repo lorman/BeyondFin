@@ -1,0 +1,13 @@
+<h3>
+  Criteria <%= criteria.operand %>, <%= criteria.id %>
+</h3>
+<ul>
+  <li>Image: <%= criteria.image %></li>
+  <% if criteria.parent %><li>Parent ID: <%= criteria.parent.id %></li><% end %>
+  <% if criteria.children.present? %>
+    <li>Children</li>
+    <% criteria.children.each do |criteria| %>
+      <li><%= render criteria %></li>
+    <% end %>
+  <% end %>
+</ul>

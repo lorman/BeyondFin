@@ -9,16 +9,16 @@
 #  type       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  assets_id  :integer
+#  azzet_id   :integer
 #  parent_id  :integer
 #
 # Indexes
 #
-#  index_criteria_on_assets_id  (assets_id)
+#  index_criteria_on_azzet_id  (azzet_id)
 #
 # Foreign Keys
 #
-#  assets_id  (assets_id => assets.id)
+#  azzet_id  (azzet_id => azzets.id)
 #
 require 'rails_helper'
 

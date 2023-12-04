@@ -10,6 +10,6 @@ class CreateCriteria < ActiveRecord::Migration[7.1]
       t.timestamps
     end
 
-    add_reference :criteria, :assets, foreign_key: true
+    add_reference :criteria, :azzet, foreign_key: true
   end
 end
